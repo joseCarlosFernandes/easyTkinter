@@ -26,20 +26,18 @@ def createScreen(title,size):
 	screen.title(title)
 	screen.geometry(size)
 
-def createButton(name, text, command, width, height, x, y):
-	cmd = eval(command) #captura o comando em string passado pelo usuário no chamado da função e passa como comando no botão
-						#obrigatório passa a string no formato "lambda: nome_funcao(parametro1, parametro2)" para funções com parametros
-						#só funciona com funções daqui ou com funções do próprio Tkinter
-	name_btn = f"{base_name_btn}_{name}"
-	btns[name_btn]= tk.Button(screen, text= text, command= cmd, width= width, height= height)
-	btns[name_btn].place(x=x,y=y)
-
-#sobrecarga da função, utilizando essa o usuário consegue passar as proprias funções no command, type tem de ser "null"
-#para usar funções com parametros tem de usar "lambda: nome_funcao(parametros)"
-def createButton(name, text, command, width, height, x, y,	null="null"):
-	name_btn = f"{base_name_btn}_{name}"
-	btns[name_btn]= tk.Button(screen, text= text, command= command, width= width, height= height)
-	btns[name_btn].place(x=x,y=y)
+def createButton(name, text, command, width, height, x, y, type):
+	if type == True:
+		name_btn = f"{base_name_btn}_{name}"
+		btns[name_btn]= tk.Button(screen, text= text, command= command, width= width, height= height)
+		btns[name_btn].place(x=x,y=y)
+	elif type == False:
+		cmd = eval(command) 
+		name_btn = f"{base_name_btn}_{name}"
+		btns[name_btn]= tk.Button(screen, text= text, command= cmd, width= width, height= height)
+		btns[name_btn].place(x=x,y=y)
+	else:
+		print("Erro, parametro type não existente")
 
 def createLabel(name, text, x, y):
 	name_lbs = f"{base_name_lbs}_{name}"
@@ -83,51 +81,53 @@ def setLabelText(nameLbl, text):
 	name_lbs = f"{base_name_lbs}_{nameLbl}"
 	lbs[name_lbs].config(text=text)
 
-def setBtnCommand(nameBtn, command):
-	cmd = eval(command) #captura o comando em string passado pelo usuário no chamado da função e passa como comando no botão
-						#obrigatório passa a string no formato "lambda: nome_funcao(parametro1, parametro2)" para funções com parametros
-						#só funciona com funções daqui ou com funções do próprio Tkinter
-	name_btn = f"{base_name_btn}_{nameBtn}"
-	btns[name_btn].config(command=cmd)
+def setBtnCommand(nameBtn, command, type):
+	if type == True:
+		name_btn = f"{base_name_btn}_{nameBtn}"
+		btns[name_btn].config(command=command)
+	elif type == False:
+		cmd = eval(command) 
+		name_btn = f"{base_name_btn}_{nameBtn}"
+		btns[name_btn].config(command=cmd)
+	else:
+		print("Erro, parametro type inexistente")
 
-#sobrecarga da função, utilizando essa o usuário consegue passar as proprias funções no command, type tem de ser "null"
-#para usar funções com parametros tem de usar "lambda: nome_funcao(parametros)"
-def setBtnCommand(nameBtn, command, type="null"):
-	name_btn = f"{base_name_btn}_{nameBtn}"
-	btns[name_btn].config(command=command)
 
-#funções para mudar a posição dos itens (sobrecargas da função position)
-def setPosition(name, x,y, type="btn"):
-	name_btn = f"{base_name_btn}_{name}"
-	btns[name_btn].place(x=x,y=y)
+#função para mudar a posição dos itens (sobrecargas da função position)
 
-def setPosition(name, x, y, type="lbl"):
-	name_lbs = f"{base_name_lbs}_{name}"
-	lbs[name_lbs].place(x=x, y=y)
+def setPosition(name, x, y, type):
+    if type == "btn":
+        name_btn = f"{base_name_btn}_{name}"
+        btns[name_btn].place(x=x, y=y)
+    elif type == "lbl":
+        name_lbs = f"{base_name_lbs}_{name}"
+        lbs[name_lbs].place(x=x, y=y)
+    elif type == "txt":
+        name_txt = f"{base_name_txt}_{name}"
+        txt[name_txt].place(x=x, y=y)
+    elif type == "etr":
+        name_etr = f"{base_name_etr}_{name}"
+        etr[name_etr].place(x=x, y=y)
+    else:
+    	print("Erro, tipo desconhecido")
 
-def setPosition(name, x, y, type="txt"):
-	name_txt = f"{base_name_txt}_{name}"
-	txt[name_txt].place(x=x,y=y)
-
-def setPosition(name, x, y, type="etr"):
-	name_etr = f"{base_name_etr}_{name}"
-	etr[name_etr].place(x=x,y=y)
-
-#funções para manipulação de tamanho
-def setSize(size, type="screen"):
+#função para manipulação de tamanho
+def setWindowSize(size): #altera tamanho da janela
 	screen.geometry(size)
 
-def setSize(name, width, height, type="btn"):
-	name_btn = f"{base_name_btn}_{name}"
-	btns[name_btn].config(width=width, height=height)
-
-def setSize(name, width, height, type="txt"):
-	name_txt = f"{base_name_txt}_{name}"
-	txt[name_txt].config(width=width, height=height)
-
-def setSize(name, width, type="etr"):
-	name_etr = f"{base_name_etr}_{name}"
-	etr[name_etr].config(width=width)
+def setSize(name, width, height, type):
+	if (height == 0 or height is None) and type == "etr":
+		name_etr = f"{base_name_etr}_{name}"
+		etr[name_etr].config(width=width)
+	else:
+		if type=="btn":
+			name_btn = f"{base_name_btn}_{name}"
+			btns[name_btn].config(width=width, height=height)
+		elif type=="txt":
+			name_txt = f"{base_name_txt}_{name}"
+			txt[name_txt].config(width=width, height=height)
+		else:
+			return print("Erro, insira um tipo válido")
 
 #funções de limpar as caixas de texto
 def cleanText(nameText):
