@@ -13,7 +13,7 @@
 <br>
 <h1>Funções:</h1>
 <h2>Funções Create:</h2>
-<h3>createScreen():</h3>
+<h3>createWindow():</h3>
 <p>A função <b>createWin()</b> recebe dois parâmetros: title e size, respectivamente. Sendo <b>title</b> o nome da janela e <b>size</b> o tamanho da mesma.<br>O parâmetro <b>size</b> deve ser declarado como uma string da seguinte forma: <br>
 "widthxheight+x+y"<br>
   Sendo <b>x</b> e <b>y</b> as coordenadas da tela onde a janela vai abrir
