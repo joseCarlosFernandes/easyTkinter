@@ -22,7 +22,7 @@ base_name_txt = "txt"
 
 
 #métodos para criar os itens
-def createWin(title,size):
+def createWindow(title,size):
 	window.title(title)
 	window.geometry(size)
 
