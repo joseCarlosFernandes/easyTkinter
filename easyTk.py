@@ -97,25 +97,37 @@ def setBtnCommand(nameBtn, command, type="null"):
 	btns[name_btn].config(command=command)
 
 #funções para mudar a posição dos itens (sobrecargas da função position)
-def setPosition(type="btn", name, x,y):
+def setPosition(name, x,y, type="btn"):
 	name_btn = f"{base_name_btn}_{name}"
 	btns[name_btn].place(x=x,y=y)
 
-def setPosition(type="lbl", name, x, y):
+def setPosition(name, x, y, type="lbl"):
 	name_lbs = f"{base_name_lbs}_{name}"
 	lbs[name_lbs].place(x=x, y=y)
 
-def setPosition(type="txt", name, x, y):
+def setPosition(name, x, y, type="txt"):
 	name_txt = f"{base_name_txt}_{name}"
 	txt[name_txt].place(x=x,y=y)
 
-def setPosition(type="etr", name, x, y):
+def setPosition(name, x, y, type="etr"):
 	name_etr = f"{base_name_etr}_{name}"
 	etr[name_etr].place(x=x,y=y)
 
 #funções para manipulação de tamanho
-def setSize(type="screen", size):
+def setSize(size, type="screen"):
 	screen.geometry(size)
+
+def setSize(name, width, height, type="btn"):
+	name_btn = f"{base_name_btn}_{name}"
+	btns[name_btn].config(width=width, height=height)
+
+def setSize(name, width, height, type="txt"):
+	name_txt = f"{base_name_txt}_{name}"
+	txt[name_txt].config(width=width, height=height)
+
+def setSize(name, width, type="etr"):
+	name_etr = f"{base_name_etr}_{name}"
+	etr[name_etr].config(width=width)
 
 #funções de limpar as caixas de texto
 def cleanText(nameText):
