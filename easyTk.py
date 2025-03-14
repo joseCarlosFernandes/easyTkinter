@@ -2,7 +2,7 @@ import tkinter as tk
 
 
 #tudo se baseia nessa variável, é o "núcleo"
-screen = tk.Tk()
+window = tk.Tk()
 
 #vetor de botões
 btns = {}
@@ -22,36 +22,36 @@ base_name_txt = "txt"
 
 
 #métodos para criar os itens
-def createScreen(title,size):
-	screen.title(title)
-	screen.geometry(size)
+def createWin(title,size):
+	window.title(title)
+	window.geometry(size)
 
 def createButton(name, text, command, width, height, x, y, type):
 	if type == True:
 		name_btn = f"{base_name_btn}_{name}"
-		btns[name_btn]= tk.Button(screen, text= text, command= command, width= width, height= height)
+		btns[name_btn]= tk.Button(window, text= text, command= command, width= width, height= height)
 		btns[name_btn].place(x=x,y=y)
 	elif type == False:
 		cmd = eval(command) 
 		name_btn = f"{base_name_btn}_{name}"
-		btns[name_btn]= tk.Button(screen, text= text, command= cmd, width= width, height= height)
+		btns[name_btn]= tk.Button(window, text= text, command= cmd, width= width, height= height)
 		btns[name_btn].place(x=x,y=y)
 	else:
 		print("Erro, parametro type não existente")
 
 def createLabel(name, text, x, y):
 	name_lbs = f"{base_name_lbs}_{name}"
-	lbs[name_lbs] = tk.Label(screen, text=text)
+	lbs[name_lbs] = tk.Label(window, text=text)
 	lbs[name_lbs].place(x=x,y=y)
 
 def createEntry(name, width, x, y):
 	name_etr = f"{base_name_etr}_{name}"
-	etr[name_etr] = tk.Entry(screen, width=width)
+	etr[name_etr] = tk.Entry(window, width=width)
 	etr[name_etr].place(x=x,y=y)
 
 def createText(name, width, height, x, y):
 	name_txt = f"{base_name_txt}_{name}"
-	txt[name_txt] = tk.Text(screen, width=width, height=height)
+	txt[name_txt] = tk.Text(window, width=width, height=height)
 	txt[name_txt].place(x=x,y=y)
 
 #metodos get
@@ -93,7 +93,7 @@ def setBtnCommand(nameBtn, command, type):
 		print("Erro, parametro type inexistente")
 
 
-#função para mudar a posição dos itens (sobrecargas da função position)
+#função para mudar a posição dos itens
 
 def setPosition(name, x, y, type):
     if type == "btn":
@@ -111,9 +111,9 @@ def setPosition(name, x, y, type):
     else:
     	print("Erro, tipo desconhecido")
 
-#função para manipulação de tamanho
+#funções para manipulação de tamanho
 def setWindowSize(size): #altera tamanho da janela
-	screen.geometry(size)
+	window.geometry(size)
 
 def setSize(name, width, height, type):
 	if (height == 0 or height is None) and type == "etr":
@@ -140,5 +140,8 @@ def cleanEntry(nameEntry):
 
 
 #função para chamar mainloop (mantém a tela aberta), tem de ser sempre declarada
-def screenMain():
-	screen.mainloop()
+def winMain():
+	window.mainloop()
+
+def winQuit():
+	window.quit()
