@@ -95,7 +95,16 @@
 </p>
 <br>
 <h3>setSize()</h3>
-<p></p>
+<p>A função <b>setSize()</b> também se trata de um conjunto de 4 funções, cada uma servindo para alterar o tamanho de algo, seja da janela, dos botões, texts ou entrys. Essas funções porém, recebem diferentes parametros entre si.
+<h3>Sobrecarga de setSize() para manipular a janela:</h3>
+  <p>Essa possuí apenas 2 parâmetros: <b>size</b> e <b>type</b>, sendo <b>type</b> sempre declarado como uma string contendo <b>"win"</b>, que indica que a função usada é a qual manipula a janela.<br>
+    Já <b>size</b> sempre deve ser delcarado como <b>"widthxheight+x+y"</b>, indicando primeiro o tamanho e em seguida a posição da janela, ou seja, essa função tamém serve para alterar a posição da janela.
+  </p>
+<h3>Sobrecarga de setSize() para manipular Buttons e Text:</h3>
+  <p>As funções <b>setSize()</b> para manipular <b>Buttons</b> e <b>Text</b> possuem os mesmos parâmetros, sendo eles: <b>name</b>, <b>width</b>, <b>height</b> e <b>type</b>, respectivamente. O parâmetro que as diferencia é <b>type</b>, onde, para se manipular <b>Buttons</b> deve se passar <b>"btn"</b> em <b>type</b> e para <b>Text</b> deve se passar <b>"txt".</b></p>
+</p>
+<h3>Sobrecarga de setSize() para manipular Entry:</h3>
+  <p>Diferente das anteriores, essa possuí somente 3 parâmetros, pois uma entry só recebe <b>width</b> em sua criação, logo os parâmetros dessa sobrecarga são: <b>name</b>, <b>width</b> e <b>type</b>, respectivamente. Sendo <b>type</b> declarado sempre como <b>"etr"</b> para indicar que é a função que se refere as entrys.</p>
 <br>
 <h2>Funções para limpar Text e Entry:</h2>
 <h3>cleanText():</h3>
