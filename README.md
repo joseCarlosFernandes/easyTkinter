@@ -88,10 +88,10 @@
 </p>
 <br>
 <h3>setPosition()</h3>
-<p> A função <b>setPosition()</b> se trata de um conjunto de 4 funções, cada uma servindo para alterar a posição de um tipo básico de objeto do Tkinter (Buttons, Texts, Entrys e Labels), cada uam dessas funções recebem 4 parâmetros: <b>type</b>, <b>name</b>, <b>x</b> e <b>y</b>, respectivamente. Sendo:<br>
-▶️<b>type:</b> O identificador das funções, nele exitem 4 opções de strings para serem passadas: "btn", "lbl", "txt" e "etr". É através desse parâmetro que se define para qual tipo básico de obejeto a função vai se referir.<br>
+<p> A função <b>setPosition()</b> se trata de um conjunto de 4 funções, cada uma servindo para alterar a posição de um tipo básico de objeto do Tkinter (Buttons, Texts, Entrys e Labels), cada uam dessas funções recebem 4 parâmetros: <b>name</b>, <b>x</b>, <b>y</b> e <b>type</b>, respectivamente. Sendo:<br>
 ▶️<b>name:</b> O nome do objeto, por exemplo, o nome do botão que se quer alterar a posição<br>
 ▶️<b>x</b> e <b>y:</b> definem a posição<br>
+▶️<b>type:</b> O identificador das funções, nele exitem 4 opções de strings para serem passadas: "btn", "lbl", "txt" e "etr". É através desse parâmetro que se define para qual tipo básico de obejeto a função vai se referir.<br>
 </p>
 <br>
 <h3>setSize()</h3>
