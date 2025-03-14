@@ -114,3 +114,4 @@
 <br>
 <h2>Função winQuit()</h2>
 <p>Essa função não recebe parâmetros e serve para fechar a janela</p>
+<br>
