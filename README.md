@@ -6,12 +6,15 @@
 <b>#import easyTk</b><br>
 
 <h1>Observações:</h1><br>
-<p>A tela criada está numa váriável que sempre tera o nome de <b>screen</b> que é global, logo, caso queira interagir direto nela sem utilizar as funções, basta chamar com <b>easyTk.screen</b></p><br>
-
+<p>A tela criada está numa váriável que sempre tera o nome de <b>window</b> que é global, logo, caso queira interagir direto nela sem utilizar as funções, basta chamar com <b>easyTk.window</b></p><br>
+<p>
+<b>Para passar funções com parâmetros dentro dos botões (indepente se for createButton() ou setBtnCommand()) use "lamba:" antes da função, independente se é uma função interna da biblioteca ou própria do seu código. Respeitando os formatos, por exemplo para passar uma função interna da biblioteca passe como string de texto "lamba: nome_da_funcao()", já para funções próprias passe sem as " ", como: lambda: sua_funcao() </b>
+</p>
+<br>
 <h1>Funções:</h1>
 <h2>Funções Create:</h2>
 <h3>createScreen():</h3>
-<p>A função <b>createScreen()</b> recebe dois parâmetros: title e size, respectivamente. Sendo <b>title</b> o nome da janela e <b>size</b> o tamanho da mesma.<br>O parâmetro <b>size</b> deve ser declarado como uma string da seguinte forma: <br>
+<p>A função <b>createWin()</b> recebe dois parâmetros: title e size, respectivamente. Sendo <b>title</b> o nome da janela e <b>size</b> o tamanho da mesma.<br>O parâmetro <b>size</b> deve ser declarado como uma string da seguinte forma: <br>
 "widthxheight+x+y"<br>
   Sendo <b>x</b> e <b>y</b> as coordenadas da tela onde a janela vai abrir
 </p>
@@ -23,7 +26,7 @@
     ▶️<b>command:</b> a ação que esse botão vai executar<br>
     ▶️<b>width</b> e <b>height</b>: definem o tamanho do botão<br>
     ▶️<b>x</b> e <b>y</b>: definem a posição do botão na tela<br>
-    ▶️<b>type:</b> esse parâmetro pode receber os valor de <b>False</b> ou <b>True</b> dependendo do que foi passado no <b>command</b>, pois, caso você queira utilizar uma função própria do Tkinter como <b>.quit</b> ou até mesmo uma função dessa própria biblioteca tem de passa-las como uma string de texto e atribuir <b>False</b> a <b>type</b> na chamada da função. Agora, caso queira passar uma função que está presente dentro do seu código (ou até mesmo de outra biblioteca) define <b>type</b> como <b>True</b>
+    ▶️<b>type:</b> esse parâmetro pode receber os valor de <b>False</b> ou <b>True</b> dependendo do que foi passado no <b>command</b>, pois, caso você queira utilizar uma função própria do Tkinter como <b>.quit</b> ou até mesmo uma função dessa própria biblioteca tem de passa-las como uma string de texto (ex: "lamba: createLabel(parametros aqui)") e atribuir <b>False</b> a <b>type</b> na chamada da função. Agora, caso queira passar uma função que está presente dentro do seu código (ou até mesmo de outra biblioteca) define <b>type</b> como <b>True</b> e não passe como string de texto.<br>
 </p>
 <br>
 <h3>createLabel():</h3>
@@ -106,5 +109,8 @@
 <h3>cleanEntry():</h3>
 <p>Precisa somente de um parâmetro, chamado de <b>nameEntry</b>, servindo para identificar de qual Entry é para apagar o texto.</p>
 <br>
-<h2>Função screenMain()</h2>
+<h2>Função winMain()</h2>
 <p>Essa função não recebe parâmetros, ela é responsável por chamar a <b>screen.mainloop()</b> que faz com que a janela seja aberta e continue em execução até ser fechada. Deve ser chamada ao final do código.</p>
+<br>
+<h2>Função winQuit()</h2>
+<p>Essa função não recebe parâmetros e serve para fechar a janela</p>
