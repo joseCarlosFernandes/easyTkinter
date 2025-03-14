@@ -17,17 +17,13 @@
 </p>
 <br>
 <h3>createButton():</h3>
-<p>A função <b>createButton()</b> recebe 7 parâmtros: name, text, command, width, height, x e y, respectivamente. Sendo:<br>
+<p>A função <b>createButton()</b> recebe 8 parâmtros: name, text, command, width, height, x, y e type, respectivamente. Sendo:<br>
     ▶️<b>name:</b> o nome do botão<br>
     ▶️<b>text:</b> o texto que vai aparecer no botão, por exemplo: "Clique"<br>
     ▶️<b>command:</b> a ação que esse botão vai executar<br>
     ▶️<b>width</b> e <b>height</b>: definem o tamanho do botão<br>
     ▶️<b>x</b> e <b>y</b>: definem a posição do botão na tela<br>
-  <h3>Sobrecarga de createButton():</h3>
-  A sobrecarga da função <b>createButton()</b> foi feita para que o usuário possa passar dentro do parâmetro <b>command</b> suas próprias funções, pois na função padrão, <b>command</b> só aceitava funções da biblioteca Tkinter.<br>
-  Para a implementação dessa sobrecarga, foi adicionado mais um parâmetro após <b>y</b>, o parâmetro <b>type</b>, que na chamada da função tem de ser definido como uma string contendo o texto "null", por exemplo:<br>
-  <br>
-  <b>easyTk.createButton("btn1", "Botão", teste, 20, 3, 30, 50, "null")</b>
+    ▶️<b>type:</b> esse parâmetro pode receber os valor de <b>False</b> ou <b>True</b> dependendo do que foi passado no <b>command</b>, pois, caso você queira utilizar uma função própria do Tkinter como <b>.quit</b> ou até mesmo uma função dessa própria biblioteca tem de passa-las como uma string de texto e atribuir <b>False</b> a <b>type</b> na chamada da função. Agora, caso queira passar uma função que está presente dentro do seu código (ou até mesmo de outra biblioteca) define <b>type</b> como <b>True</b>
 </p>
 <br>
 <h3>createLabel():</h3>
@@ -82,29 +78,26 @@
 <p> Assim tamém, essa função também recebe dois parâmetros: <b>nameLbl</b> e <b>text</b> que possuem o mesmo propósito das anteriores.</p>
 <br>
 <h3>setBtnCommand():</h3>
-<p> Essa função tamém recebe dois parâmetros: <b>nameBtn</b> e <b>command</b>, sendo <b>nameBtn</b> o nome do botão e <b>command</b> o novo comando que vai ser atribuído ao botão. Porém, assim como a função <b>createButton()</b> essa tamém possuí uma sobrecarga, para possibilitar o usuário inserir suas próprias funções como comandos.<br>
-<h3>Sobrecarga de setBtnCommand():</h3>
-  <p> Assim como <b>createButton()</b> essa função também passa a receber um parâmetro identificado como <b>type</b> que deve ser adicionado na chamada da função com uma string contendo o texto "null".</p>
+<p> Essa função recebe três parâmetros: <b>nameBtn</b>, <b>command</b> e <b>type</b>, respectivamente, sendo <b>nameBtn</b> o nome do botão e <b>command</b> o novo comando que vai ser atribuído ao botão. Aqui <b>type</b> possuí a mesma função que em <b>createButton()</b> e também aceita somente os valores de <b>False</b> e <b>True</b>.<br>
 </p>
 <br>
 <h3>setPosition()</h3>
-<p> A função <b>setPosition()</b> se trata de um conjunto de 4 funções, cada uma servindo para alterar a posição de um tipo básico de objeto do Tkinter (Buttons, Texts, Entrys e Labels), cada uam dessas funções recebem 4 parâmetros: <b>name</b>, <b>x</b>, <b>y</b> e <b>type</b>, respectivamente. Sendo:<br>
-▶️<b>name:</b> O nome do objeto, por exemplo, o nome do botão que se quer alterar a posição<br>
-▶️<b>x</b> e <b>y:</b> definem a posição<br>
-▶️<b>type:</b> O identificador das funções, nele exitem 4 opções de strings para serem passadas: "btn", "lbl", "txt" e "etr". É através desse parâmetro que se define para qual tipo básico de obejeto a função vai se referir.<br>
+<p> A função <b>setPosition()</b> se trata de um conjunto de 4 condicionais, cada uma servindo para alterar a posição de um tipo básico de objeto do Tkinter (Buttons, Texts, Entrys e Labels), essa função recebe 4 parâmetros: <b>name</b>, <b>x</b>, <b>y</b> e <b>type</b>, respectivamente. Sendo:<br>
+▶️<b> name:</b> O nome do objeto, por exemplo, o nome do botão que se quer alterar a posição<br>
+▶️<b> x</b> e <b>y:</b> definem a posição<br>
+▶️<b> type:</b> O identificador das funções, nele exitem 4 opções de strings para serem passadas: "btn", "lbl", "txt" e "etr". É através desse parâmetro que se define para qual tipo básico de obejeto a função vai se referir.<br>
 </p>
 <br>
 <h3>setSize()</h3>
-<p>A função <b>setSize()</b> também se trata de um conjunto de 4 funções, cada uma servindo para alterar o tamanho de algo, seja da janela, dos botões, texts ou entrys. Essas funções porém, recebem diferentes parametros entre si.
-<h3>Sobrecarga de setSize() para manipular a janela:</h3>
-  <p>Essa possuí apenas 2 parâmetros: <b>size</b> e <b>type</b>, sendo <b>type</b> sempre declarado como uma string contendo <b>"win"</b>, que indica que a função usada é a qual manipula a janela.<br>
-    Já <b>size</b> sempre deve ser delcarado como <b>"widthxheight+x+y"</b>, indicando primeiro o tamanho e em seguida a posição da janela, ou seja, essa função tamém serve para alterar a posição da janela.
-  </p>
-<h3>Sobrecarga de setSize() para manipular Buttons e Text:</h3>
-  <p>As funções <b>setSize()</b> para manipular <b>Buttons</b> e <b>Text</b> possuem os mesmos parâmetros, sendo eles: <b>name</b>, <b>width</b>, <b>height</b> e <b>type</b>, respectivamente. O parâmetro que as diferencia é <b>type</b>, onde, para se manipular <b>Buttons</b> deve se passar <b>"btn"</b> em <b>type</b> e para <b>Text</b> deve se passar <b>"txt".</b></p>
+<p>A função <b>setSize()</b> se trata de um conjunto de 3 condicionais, cada uma servindo para alterar o tamanho de algo, seja dos botões, texts ou entrys. Essa função porém, recebe 4 parâmetros: <b>name</b>, <b>width</b>, <b>height</b> e <b>type</b>. Sendo:
+  ▶️<b> name</b>: o nome do botão, text ou entry <br>
+  ▶️<b> width:</b>: o comprimento <br>
+  ▶️<b> height</b>: a altura (no caso de entrys, pode-se não declarar na chamada da função) <br>
+  ▶️<b> type</b>: define qual o tipo do objeto que vai ser manipulado, deve ser passado como string no final da chamada da função e suporta: "btn", "txt", "etr", cada uma relacionada a um tipo. <br>
 </p>
-<h3>Sobrecarga de setSize() para manipular Entry:</h3>
-  <p>Diferente das anteriores, essa possuí somente 3 parâmetros, pois uma entry só recebe <b>width</b> em sua criação, logo os parâmetros dessa sobrecarga são: <b>name</b>, <b>width</b> e <b>type</b>, respectivamente. Sendo <b>type</b> declarado sempre como <b>"etr"</b> para indicar que é a função que se refere as entrys.</p>
+<h3>setWindowSize():</h3>
+  <p>Se trata da função para manipular o tamanho da janela, recebe 1 parâmetro chamado de <b>size</b>, que deve ser declarado no formato "width x height+x+y", sendo <b>x</b> e <b>y</b> relacionados a posição da janela, ou seja essa função também manipula a posição da janela na tela.<br>
+  </p>
 <br>
 <h2>Funções para limpar Text e Entry:</h2>
 <h3>cleanText():</h3>
