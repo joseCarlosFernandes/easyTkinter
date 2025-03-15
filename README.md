@@ -95,7 +95,7 @@
 <p>A função <b>setSize()</b> se trata de um conjunto de 3 condicionais, cada uma servindo para alterar o tamanho de algo, seja dos botões, texts ou entrys. Essa função porém, recebe 4 parâmetros: <b>name</b>, <b>width</b>, <b>height</b> e <b>type</b>. Sendo:
   ▶️<b> name</b>: o nome do botão, text ou entry <br>
   ▶️<b> width:</b>: o comprimento <br>
-  ▶️<b> height</b>: a altura (no caso de entrys, pode-se não declarar na chamada da função) <br>
+  ▶️<b> height</b>: a altura (no caso de entrys, deve-se declarar como <b>None</b> na chamada da função) <br>
   ▶️<b> type</b>: define qual o tipo do objeto que vai ser manipulado, deve ser passado como string no final da chamada da função e suporta: "btn", "txt", "etr", cada uma relacionada a um tipo. <br>
 </p>
 <h3>setWindowSize():</h3>
