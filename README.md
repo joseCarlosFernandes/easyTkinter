@@ -13,7 +13,7 @@ $ git clone https://github.com/José Carlos Fernandes/easyTkinter.git
 <p>
 <br>
 
-<b> Para Importar para o seu código use:</b>
+<p>Para Importar para o seu código use:<p>
 <pre><code>$ #import easyTk</code></pre>
 <br>
 
