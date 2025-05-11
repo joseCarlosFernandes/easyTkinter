@@ -12,7 +12,10 @@ $ git clone https://github.com/José Carlos Fernandes/easyTkinter.git
 </pre>
 <p>
 <br>
-<b>#import easyTk</b><br>
+
+<b> Para Importar para o seu código use:</b>
+<pre><code>$ #import easyTk</code></pre>
+<br>
 
 <h1>Observações:</h1><br>
 <p>A tela criada está numa váriável que sempre tera o nome de <b>window</b> que é global, logo, caso queira interagir direto nela sem utilizar as funções, basta chamar com <b>easyTk.window</b></p><br>
