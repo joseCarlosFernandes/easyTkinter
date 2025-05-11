@@ -7,7 +7,7 @@
 
 <pre>
 <code>
-$ git clone https://github.com/José Carlos Fernandes/easyTkinter.git
+$ git clone https://github.com/joseCarlosFernandes/easyTkinter.git
 </code>
 </pre>
 <p>
