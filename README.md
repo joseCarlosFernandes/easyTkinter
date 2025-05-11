@@ -5,7 +5,7 @@
 <p>Para utilizar a biblioteca, baixe o arquivo e o adicione no mesmo diretório de seu projeto python, o importando para dentro do código com:</p><br>
 <p>Para baixar o repositório use:<br>
 ```sh
-$ git import easyTkinter.git
+$ git clone https://github.com/rwdd64/tictactoe.git
 ```
 <p>
 <br>
