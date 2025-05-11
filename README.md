@@ -5,7 +5,7 @@
 <p>Para utilizar a biblioteca, baixe o arquivo e o adicione no mesmo diretório de seu projeto python, o importando para dentro do código com:</p><br>
 <p>Para baixar o repositório use:<br>
 ```
-git import easyTkinter.git
+$ git import easyTkinter.git
 ```
 <p>
 <br>
