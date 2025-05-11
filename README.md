@@ -3,6 +3,10 @@
 
 <h1>Como utilizar:</h1>
 <p>Para utilizar a biblioteca, baixe o arquivo e o adicione no mesmo diretório de seu projeto python, o importando para dentro do código com:</p><br>
+<p>Para baixar o repositório use:<br>
+<b>git import <b>
+<p>
+<br>
 <b>#import easyTk</b><br>
 
 <h1>Observações:</h1><br>
